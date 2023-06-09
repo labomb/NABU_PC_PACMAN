@@ -13,15 +13,15 @@ The source code that was initially made available was mostly complete, but alas 
  
 ## Directories
 
-- All required sources files and build scripts are in the root directory of this repository
-- The 'tools' directory contains all of the CP/M commands required to build PACMAN
+- All the required sources files and build scripts are in the root directory of this repository
+- The 'tools' directory contains the CP/M development tools required to build PACMAN
 - The 'extras' directory contains a copy of the NABU main menu 'Cycle 1' software (see below)
-- The 'unused' directory contains files that were part of the original source repository that aren't actually required/used to build the PACMAN application
+- The 'unused' directory contains files that were part of the original source repository, but aren't actually required/used to build the PACMAN application
 
  
 ## Prerequisites
 
-* You will need a CP/M development environment or tools that enable running the native CP/M tools (provided in this repository) on various host platforms. While it is beyond the scope of this document to provide all of the details on how to set one up, there are numerous options available. Feel free to search for [AltairZ80](https://schorn.ch/altair.html), [RunCPM](https://github.com/MockbaTheBorg/RunCPM), [myZ80](http://www.z80.eu/myz80cpm.html), [ZXCC](https://www.seasip.info/Unix/Zxcc/), and several others. Or if you are a traditionalist, you can certainly use a real CP/M computer!
+* You will need a CP/M development environment or tools that enable running the native CP/M tools (provided in this repository) on various host platforms. While it is beyond the scope of this document to provide all of the details on how to set such an environment up, there are numerous options available. Feel free to search for [AltairZ80](https://schorn.ch/altair.html), [RunCPM](https://github.com/MockbaTheBorg/RunCPM), [myZ80](http://www.z80.eu/myz80cpm.html), [ZXCC](https://www.seasip.info/Unix/Zxcc/), and several others. Or if you are a traditionalist, you can certainly use a real CP/M computer!
 * You will also need a means to load the resulting PACMAN 'PAK' file after building onto the NABU PC. Most, if not all of the NABU server software applications available include the ability to load local applications. The approach that I use is detailed below, but refer to your specific server documentation for details on how to do so.
 
  
@@ -35,7 +35,7 @@ Building PACMAN is quite straight-forward:
 * Assemble and link the sources.
 	- If you have CP/M 3 (sometimes referred to as CP/M Plus) or equivalent, you can simply enter something like this:
       ```
-      SUBMIT DOALL.SUB
+      SUBMIT DOALL
       ```
 	- If you are using CP/M 2.2, a SUBMIT utility generally isn't provided by default. If that is indeed the case, you will need to enter each of the commands listed in the DOALL.SUB file individually:
       ```
@@ -53,7 +53,7 @@ Once the above steps are completed, you will have a new file named PACMAN.COM.
  
 #### Create a .PAK segment file
 
-You now need to convert the PACMAN.COM file into a 'PAK' file suitable for loading onto the NABU PC using the CABUILD tool. Note that PACMAN.COM in it's current state is *not* a standard CP/M executable that can simply be run from the CP/M command line, it needs to be converted and loaded instead.
+You now need to convert the PACMAN.COM file into a 'PAK' file that is suitable for loading onto the NABU PC. Note that PACMAN.COM in it's current state is *not* a standard CP/M executable that can simply be run from the CP/M command line, it needs to be converted and loaded instead. The tool that does the conversion is CABUILD.
 
 When CABUILD is executed, it will prompt you for various bits of detail that it requires to create the PAK file:
 
@@ -68,7 +68,7 @@ A new file named 000287.PAK will be created when the process is complete.
 
 For this project, I used the NABU Internet Adapter server software found [here](https://nabu.ca/downloads-nabu-internet-adapter). If using another server application, you may need to take a different approach.
 
-Copy the 000287.PAK file, along with the 000001.PAK file found in the extras folder of this repository, to the directory that you have configured as your 'local PAK folder' in the IA application. Be sure to configure the IA via Settings to 'Use local folder for HomeBrew' in the Source menu, and verify that the local folder set there is correct for your setup.
+Copy the 000287.PAK file, along with the 000001.PAK file found in the extras folder of this repository, to the directory that you have configured as your 'local PAK folder' in the IA application. Be sure to configure the IA via Settings to 'Use local folder for HomeBrew' in the Source menu, and verify that the local folder that is set there is correct for your setup.
 
 Assuming your NABU is connected and working properly, you should be able to restart it and subsequently see the (hopefully now familiar) main menu, or 'Cycle 1' software interface as per usual. Navigate to the 'Network Services' menu item, and then select 'PAC-MAN'. You should be good to go :slightly_smiling_face:.
 
