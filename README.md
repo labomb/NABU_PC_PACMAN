@@ -33,11 +33,11 @@ Building PACMAN is quite straight-forward:
 
 * Copy all of the source files and all of the files in the tools directory to a disk, disk image, hard drive image, or directory depending on your CP/M build environment.
 * Assemble and link the sources.
-	- If you have CP/M 3 (sometimes referred to as CP/M Plus) or equivalent, you can simply enter something like this:
+	- If you have CP/M 2.2 of CP/M 3 (sometimes referred to as CP/M Plus) or equivalent, you can simply enter something like this:
       ```
       SUBMIT DOALL
       ```
-	- If you prefer, you can enter each of the commands listed in the DOALL.SUB file individually:
+	- Or if you prefer, you can enter each of the commands listed in the DOALL.SUB file individually:
       ```
       M80 =PACMAN
       M80 =LINKTAB.MHO
