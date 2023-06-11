@@ -37,7 +37,7 @@ Building PACMAN is quite straight-forward:
       ```
       SUBMIT DOALL
       ```
-	- If you are using CP/M 2.2, a SUBMIT utility generally isn't provided by default. If that is indeed the case, you will need to enter each of the commands listed in the DOALL.SUB file individually:
+	- If you prefer, you can enter each of the commands listed in the DOALL.SUB file individually:
       ```
       M80 =PACMAN
       M80 =LINKTAB.MHO
