@@ -73,6 +73,11 @@ Copy the 000287.PAK file, along with the 000001.PAK file found in the extras fol
 Assuming your NABU is connected and working properly, you should be able to restart it and subsequently see the (hopefully now familiar) main menu, or 'Cycle 1' software interface as per usual. Navigate to the 'Network Services' menu item, and then select 'PAC-MAN'. You should be good to go :slightly_smiling_face:.
 
  
+## Note
+
+You should maintain the line ($0D and $0A) and file ($1A) termination format of the source files should you wish to modify them at some point. Some CP/M build environments can handle files regardless, while others cannot. If you see multiple errors with a given file during assembly, check the file formatting.
+
+ 
 ## Original NABU PAC-MAN Z80 Source code
 
 The official Source Code to NABU PAC-MAN can be found [here](https://github.com/LeoBinkowski/NABU/tree/main).
